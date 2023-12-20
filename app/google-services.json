@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "963532807212",
+    "project_id": "mchat-6acee",
+    "storage_bucket": "mchat-6acee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963532807212:android:c588afbb3989bd8ce84589",
+        "android_client_info": {
+          "package_name": "uz.itschool.mchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_hfgHJyyk1tPY-oSATe9ibpqB7z9aDco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
