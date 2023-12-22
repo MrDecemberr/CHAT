@@ -55,7 +55,8 @@ fun SettingsScreen(navController: NavController) {
             }
         })
     }) { innerPadding ->
-        var password by remember { mutableStateOf(TextFieldValue("")) }
+        var old_password by remember { mutableStateOf(TextFieldValue("")) }
+        var new_password by remember { mutableStateOf(TextFieldValue("")) }
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -68,20 +69,31 @@ fun SettingsScreen(navController: NavController) {
                 color = Color.White
             )
             OutlinedTextField(
+                colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(Color.White),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 5.dp),
+                value = old_password,
+                onValueChange = {
+                    old_password = it
+                },
+                label = { Text(text = "Your Old Password", color = Color.White) },
+                placeholder = { Text(text = "Password", color = Color.White) },
+            )
+            OutlinedTextField(
                 colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(disabledTextColor = Color.White),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 5.dp),
-                value = password,
+                value = new_password,
                 onValueChange = {
-                    password = it
+                    new_password = it
                 },
                 label = { Text(text = "Your New Password", color = Color.White) },
                 placeholder = { Text(text = "Password", color = Color.White) },
             )
             Button(modifier = Modifier.padding(top = 10.dp), onClick = {
-                Main.setPassword(Main.getSavedUser(context), password.text)
-                Toast.makeText(context, "Password changed successfully", Toast.LENGTH_SHORT).show()
+                Main.setPassword(context, Main.getSavedUser(context), old_password.text, new_password.text)
             }) {
                 Text(text = "Reset")
             }

@@ -2,6 +2,7 @@ package uz.itschool.mchat.Data
 
 import android.content.SharedPreferences
 import android.os.Build
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.compose.ui.text.input.TextFieldValue
 import com.google.firebase.database.DataSnapshot
@@ -51,12 +52,17 @@ class Main {
             return sharedPreferences.getString("user", "") ?: ""
         }
 
-        fun setPassword(user: String, password: String) {
+        fun setPassword(context: android.content.Context, user: String, old_password: String, new_password: String) {
             users.child(user).addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val changedUser = dataSnapshot.getValue(User::class.java)
                     if (changedUser != null) {
-                        changedUser.password = password
+                        if (changedUser.password == old_password) {
+                            changedUser.password = new_password
+                            Toast.makeText(context, "Successfully changed", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(context, "Not changed", Toast.LENGTH_SHORT).show()
+                        }
                     }
                     users.child(user).setValue(changedUser)
                 }

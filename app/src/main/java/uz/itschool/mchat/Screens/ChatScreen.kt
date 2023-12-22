@@ -69,7 +69,7 @@ fun ChatScreen(name: String, navController: NavController) {
     }, bottomBar = {
         BottomAppBar(containerColor = Color(23, 33, 43)) {
             OutlinedTextField(
-                colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(disabledTextColor = Color.White),
+                colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(Color(23, 22, 22)),
                 value = msg,
                 onValueChange = {
                     msg = it
