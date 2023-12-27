@@ -1,4 +1,4 @@
-package com.example.chat_app.Screens
+package uz.itschool.mchat.Screens
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -12,8 +12,6 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-
-
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -40,7 +38,7 @@ fun SignUpScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(14, 22, 33)),
+            .background(Color(0, 0, 0, 255)),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -71,7 +69,7 @@ fun SignUpScreen(navController: NavController) {
             onValueChange = {
                 fullname = it
             },
-            label = { Text(text = "Your Full Name", color = Color.White) },
+            label = { Text(text = "Full Name", color = Color.White) },
             placeholder = { Text(text = "Full Name", color = Color.White) },
         )
         OutlinedTextField(
@@ -113,7 +111,7 @@ fun SignUpScreen(navController: NavController) {
         Button(colors = ButtonDefaults.buttonColors(containerColor = Color(14, 22, 33)), onClick = {
             navController.navigate("SignIn")
         }) {
-            Text(text = "Already have an account", fontSize = 17.sp)
+            Text(text = "Sign In", fontSize = 17.sp)
         }
     }
 }

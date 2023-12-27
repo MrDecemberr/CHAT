@@ -1,4 +1,4 @@
-package com.example.chat_app.Screens
+package uz.itschool.mchat.Screens
 
 import android.widget.Toast
 import androidx.compose.foundation.background

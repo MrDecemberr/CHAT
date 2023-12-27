@@ -1,4 +1,4 @@
-package com.example.chat_app.Screens
+package uz.itschool.mchat.Screens
 
 import android.annotation.SuppressLint
 import android.os.Build
@@ -35,9 +35,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.chat_app.MessageItem
+
 import uz.itschool.mchat.Data.Main
 import uz.itschool.mchat.Data.Message
+import uz.itschool.mchat.MessageItem
 
 @RequiresApi(Build.VERSION_CODES.O)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -50,11 +51,9 @@ fun ChatScreen(name: String, navController: NavController) {
     Main.getMessages(name, Main.getSavedUser(context)) { list ->
         messages = list
     }
-    Scaffold(containerColor = Color(14, 22, 33), topBar = {
+    Scaffold(containerColor = Color(0, 0, 0, 255), topBar = {
         TopAppBar(colors = TopAppBarDefaults.smallTopAppBarColors(
-            containerColor = Color(
-                23, 33, 43
-            )
+            containerColor = Color(253, 216, 53, 255)
         ), title = {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 IconButton(onClick = { navController.navigate("Home") }) {
@@ -68,14 +67,20 @@ fun ChatScreen(name: String, navController: NavController) {
             }
         })
     }, bottomBar = {
-        BottomAppBar(containerColor = Color(23, 33, 43)) {
+        BottomAppBar(containerColor = Color(253, 216, 53, 255)) {
             OutlinedTextField(
-                colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(Color(23, 22, 22)),
+                colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(Color(
+                    240,
+                    237,
+                    237,
+                    255
+                )
+                ),
                 value = msg,
                 onValueChange = {
                     msg = it
                 },
-                label = { Text(text = "Your Message") },
+                label = { Text(text = "Type Message") },
                 placeholder = { Text(text = "Message") },
             )
             Box(
@@ -104,10 +109,10 @@ fun ChatScreen(name: String, navController: NavController) {
                 .padding(innerPadding),
         ) {
             items(messages) { item ->
-                item.msg?.let { it1 ->
+                item.mess?.let { it1 ->
                     item.date?.let { it2 ->
                         MessageItem(
-                            msg = it1,
+                            mess = it1,
                             time = it2,
                             position = item.from == Main.getSavedUser(context)
                         )

@@ -1,4 +1,4 @@
-package com.example.chat_app
+package uz.itschool.mchat
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun MessageItem(msg: String, time: String, position: Boolean) {
+fun MessageItem(mess: String, time: String, position: Boolean) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -34,7 +34,7 @@ fun MessageItem(msg: String, time: String, position: Boolean) {
                     Text(
                         modifier = Modifier.background(Color(43, 82, 120)),
                         fontSize = 25.sp,
-                        text = msg,
+                        text = mess,
                         color = Color.White,
                     )
                 }
@@ -55,7 +55,7 @@ fun MessageItem(msg: String, time: String, position: Boolean) {
                     Text(
                         modifier = Modifier.background(Color(24, 37, 51)),
                         fontSize = 25.sp,
-                        text = msg,
+                        text = mess,
                         color = Color.White,
                     )
                 }

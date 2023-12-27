@@ -9,9 +9,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.core.Context
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
+
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -19,7 +17,7 @@ import java.time.format.DateTimeFormatter
 data class Message(
     val from: String?,
     val to: String?,
-    val msg: String?,
+    val mess: String?,
     val date: String?,
 ) {
     constructor() : this(null, null, null, null)
@@ -125,11 +123,11 @@ class Main {
         }
 
         @RequiresApi(Build.VERSION_CODES.O)
-        fun sendMessage(from: String, to: String, msg: String) {
+        fun sendMessage(from: String, to: String, mess: String) {
             val currentDateTime = LocalDateTime.now()
             val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
             val formattedDateTime = currentDateTime.format(formatter)
-            val data = Message(from, to, msg, formattedDateTime)
+            val data = Message(from, to, mess, formattedDateTime)
             messages.push().setValue(data)
         }
 

@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MCHATTheme {
                 val navController = rememberNavController()
-                AppNavigation(navController = navController)
+                AppNavigation(navController = navController,this)
             }
         }
     }

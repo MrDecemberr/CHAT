@@ -1,13 +1,11 @@
-package com.example.chat_app.Screens
+package uz.itschool.mchat.Screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.MailOutline
-import androidx.compose.material3.Icon
+
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -32,7 +30,7 @@ fun SplashScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(14, 22, 33)),
+            .background(Color(0, 0, 0, 255)),
         contentAlignment = Alignment.Center,
     ) {
 Image(painter = painterResource(id = R.drawable.tw), contentDescription ="Toga", modifier = Modifier.size(200.dp) )    }
