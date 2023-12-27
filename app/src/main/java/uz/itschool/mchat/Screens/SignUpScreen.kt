@@ -52,7 +52,7 @@ fun SignUpScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 13.dp),
-            colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(disabledTextColor = Color.White),
+            colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(disabledTextColor = Color(255,255,255,255)),
             value = username,
             onValueChange = {
                 username = it
@@ -64,7 +64,7 @@ fun SignUpScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 13.dp),
-            colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(disabledTextColor = Color.White),
+            colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(disabledTextColor = Color(255,255,255,255)),
             value = fullname,
             onValueChange = {
                 fullname = it
@@ -76,7 +76,7 @@ fun SignUpScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 13.dp),
-            colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(disabledTextColor = Color.White),
+            colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(disabledTextColor = Color(255,255,255,255)),
             value = password,
             onValueChange = {
                 password = it
@@ -108,7 +108,7 @@ fun SignUpScreen(navController: NavController) {
                 fontSize = 19.sp
             )
         }
-        Button(colors = ButtonDefaults.buttonColors(containerColor = Color(14, 22, 33)), onClick = {
+        Button(colors = ButtonDefaults.buttonColors(containerColor = Color(0, 0, 0, 255)), onClick = {
             navController.navigate("SignIn")
         }) {
             Text(text = "Sign In", fontSize = 17.sp)
