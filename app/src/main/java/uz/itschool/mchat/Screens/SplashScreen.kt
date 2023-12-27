@@ -1,5 +1,6 @@
 package com.example.chat_app.Screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,10 +14,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import kotlinx.coroutines.delay
 import uz.itschool.mchat.Data.Main
+import uz.itschool.mchat.R
 
 @Composable
 fun SplashScreen(navController: NavController) {
@@ -32,11 +35,5 @@ fun SplashScreen(navController: NavController) {
             .background(Color(14, 22, 33)),
         contentAlignment = Alignment.Center,
     ) {
-        Icon(
-            modifier = Modifier.size(200.dp),
-            imageVector = Icons.Default.MailOutline,
-            contentDescription = "App Icon",
-            tint = Color(108, 120, 131),
-        )
-    }
+Image(painter = painterResource(id = R.drawable.tw), contentDescription ="Toga", modifier = Modifier.size(200.dp) )    }
 }

@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
@@ -28,7 +29,7 @@ fun ChatItem(name: String, navController: NavController) {
                 navController.navigate(route = Screens.Chat.getFullRoute(name = name))
             }) {
         Icon(
-            imageVector = Icons.Default.Person,
+            imageVector = Icons.Default.AccountCircle,
             contentDescription = "Person Icon",
             Modifier.size(32.dp),
             tint = Color.White,

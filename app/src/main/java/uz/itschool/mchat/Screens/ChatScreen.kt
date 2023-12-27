@@ -12,6 +12,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -58,7 +59,7 @@ fun ChatScreen(name: String, navController: NavController) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 IconButton(onClick = { navController.navigate("Home") }) {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
+                        imageVector = Icons.Default.KeyboardArrowLeft,
                         contentDescription = "Back Icon",
                         tint = Color.White,
                     )

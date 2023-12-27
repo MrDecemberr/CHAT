@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -46,7 +47,7 @@ fun SettingsScreen(navController: NavController) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 IconButton(onClick = { navController.navigate("Home") }) {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
+                        imageVector = Icons.Default.KeyboardArrowLeft,
                         contentDescription = "Back Icon",
                         tint = Color.White,
                     )
@@ -63,11 +64,7 @@ fun SettingsScreen(navController: NavController) {
                 .padding(horizontal = 10.dp)
                 .padding(innerPadding),
         ) {
-            Text(
-                modifier = Modifier.padding(top = 10.dp),
-                text = "Reset Password",
-                color = Color.White
-            )
+
             OutlinedTextField(
                 colors = androidx.compose.material3.TextFieldDefaults.outlinedTextFieldColors(Color.White),
                 modifier = Modifier
@@ -92,13 +89,13 @@ fun SettingsScreen(navController: NavController) {
                 label = { Text(text = "Your New Password", color = Color.White) },
                 placeholder = { Text(text = "Password", color = Color.White) },
             )
-            Button(modifier = Modifier.padding(top = 10.dp), onClick = {
+            Button(modifier = Modifier.fillMaxWidth(), onClick = {
                 Main.setPassword(context, Main.getSavedUser(context), old_password.text, new_password.text)
             }) {
-                Text(text = "Reset")
+                Text(text = "Submit")
             }
-            Button(modifier = Modifier.padding(top = 5.dp),
-                colors = ButtonDefaults.buttonColors(Color.Red),
+            Button(modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(Color.Blue),
                 onClick = {
                     Main.saveUser(context, "")
                     navController.navigate("SignIn")

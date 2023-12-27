@@ -81,14 +81,14 @@ fun SignInScreen(navController: NavController) {
         }) {
             Text(
                 modifier = Modifier.padding(horizontal = 15.dp, vertical = 5.dp),
-                text = "Submit",
+                text = "Next",
                 fontSize = 19.sp
             )
         }
         Button(colors = ButtonDefaults.buttonColors(containerColor = Color(14, 22, 33)), onClick = {
             navController.navigate("SignUp")
         }) {
-            Text(text = "Do not have an account", fontSize = 17.sp)
+            Text(text = "Sign Up", fontSize = 17.sp)
         }
     }
 }

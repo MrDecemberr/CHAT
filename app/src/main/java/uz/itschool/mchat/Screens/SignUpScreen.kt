@@ -83,12 +83,12 @@ fun SignUpScreen(navController: NavController) {
             onValueChange = {
                 password = it
             },
-            label = { Text(text = "Your Password", color = Color.White) },
+            label = { Text(text = "Enter Password", color = Color.White) },
             placeholder = { Text(text = "Password", color = Color.White) },
         )
         Button(modifier = Modifier.padding(top = 27.dp), onClick = {
             if (" " in username.text) {
-                Toast.makeText(context, "Username can not contain spaces", Toast.LENGTH_SHORT)
+                Toast.makeText(context, "Enter Username!!", Toast.LENGTH_SHORT)
                     .show()
             } else {
                 Main.checkUser(username.text) {
@@ -98,7 +98,7 @@ fun SignUpScreen(navController: NavController) {
                         navController.navigate("Home")
                     } else {
                         Toast.makeText(
-                            context, "Username already exists. Change username", Toast.LENGTH_SHORT
+                            context, "Username already exists", Toast.LENGTH_SHORT
                         ).show()
                     }
                 }
@@ -106,7 +106,7 @@ fun SignUpScreen(navController: NavController) {
         }) {
             Text(
                 modifier = Modifier.padding(horizontal = 15.dp, vertical = 5.dp),
-                text = "Submit",
+                text = "Next",
                 fontSize = 19.sp
             )
         }
